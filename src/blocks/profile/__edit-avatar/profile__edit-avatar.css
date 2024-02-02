@@ -1,0 +1,16 @@
+.profile__edit-avatar {
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  padding: 47px;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: visibility 0.3s, opacity 0.5s linear;
+  cursor: pointer;
+}
+
+.profile__edit-avatar:hover, .profile__avatar:hover + .profile__edit-avatar {
+  visibility: visible;
+  opacity: 1;
+}

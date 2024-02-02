@@ -1,0 +1,33 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 1280px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 885px) {
+  .page {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page {
+    max-width: 320px;
+  }
+}

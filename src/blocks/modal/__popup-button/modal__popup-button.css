@@ -1,0 +1,19 @@
+.modal__popup-button {
+  position: relative;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  top: -5px;
+  left: 35px;
+}
+
+.modal__popup-button:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 768px) {
+  .modal__popup-button {
+    max-height: 28px;
+  }
+}

@@ -1,0 +1,15 @@
+.card__button {
+  height: 19;
+  width: 21px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card__button:hover {
+  opacity: 0.6;
+  transform: scale(1.2);
+}
+
+.card__button:active {
+  transform: scale(0.8);
+}
