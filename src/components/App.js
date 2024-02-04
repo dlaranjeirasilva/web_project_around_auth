@@ -7,8 +7,10 @@ import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
 import DeleteConfirmationPopup from './DeleteConfirmationPopup';
 import { useState, useEffect } from 'react';
+import { Route, Switch, withRouter, useHistory } from 'react-router-dom'
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import api from '../utils/api';
+import Login from './Login';
 
 function App() {
   const [isEditProfilePopupOpen, setEditProfilePopupOpen] = useState(false);
@@ -19,6 +21,10 @@ function App() {
   const [selectedDeletionCard, setSelectedDeletionCard] = useState(null)
   const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const history = useHistory();
 
   function handleCardLike(card) {
     const isLiked = card.likes.some(i => i._id === currentUser._id);
@@ -64,6 +70,8 @@ function App() {
         setCurrentUser(data);
       })
   }, []);
+
+
 
   const handleEditAvatarClick = () => {
     setEditAvatarPopupOpen(true);
@@ -113,52 +121,62 @@ function App() {
   return (
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
-        <Header />
-        <Main 
-          cards={cards}
-          onEditProfileClick={handleEditProfileClick}
-          onAddPlaceClick={handleAddPlaceClick}
-          onEditAvatarClick={handleEditAvatarClick}
-          onDeleteClick={handleDeleteClick}
-          onCardLike={handleCardLike}
-          onCardDelete={handleCardDelete}
-          onCardClick={handleCardClick}
-        >
-          <EditProfilePopup 
-            isOpen={isEditProfilePopupOpen}
-            onClose={closeAllPopups}
-            onUpdateUser={handleUpdateUser}
-          />
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/web_project_around_react">
+            <Header headerAccess='entre'/>
+            <Main 
+              cards={cards}
+              onEditProfileClick={handleEditProfileClick}
+              onAddPlaceClick={handleAddPlaceClick}
+              onEditAvatarClick={handleEditAvatarClick}
+              onDeleteClick={handleDeleteClick}
+              onCardLike={handleCardLike}
+              onCardDelete={handleCardDelete}
+              onCardClick={handleCardClick}
+            >
+              <EditProfilePopup 
+                isOpen={isEditProfilePopupOpen}
+                onClose={closeAllPopups}
+                onUpdateUser={handleUpdateUser}
+              />
 
-          <AddPlacePopup 
-            isOpen={isAddPlacePopupOpen}
-            onClose={closeAllPopups}
-            onAddPlaceSubmit={handleAddPlaceSubmit}
-          />
+              <AddPlacePopup 
+                isOpen={isAddPlacePopupOpen}
+                onClose={closeAllPopups}
+                onAddPlaceSubmit={handleAddPlaceSubmit}
+              />
 
-          <ImagePopup
-            card={selectedCard}
-            onClose={closeAllPopups}
-          />
+              <ImagePopup
+                card={selectedCard}
+                onClose={closeAllPopups}
+              />
 
-          <EditAvatarPopup
-            isOpen={isEditAvatarPopupOpen}
-            onClose={closeAllPopups}
-            onUpdateAvatar={handleUpdateAvatar}
-          />
-          
-          <DeleteConfirmationPopup
-            isOpen={isDeletePopupOpen}
-            onClose={closeAllPopups}
-            onCardDelete={handleCardDelete}
-            card={selectedDeletionCard}
-          />
-          
-        </Main>
-        <Footer />     
+              <EditAvatarPopup
+                isOpen={isEditAvatarPopupOpen}
+                onClose={closeAllPopups}
+                onUpdateAvatar={handleUpdateAvatar}
+              />
+              
+              <DeleteConfirmationPopup
+                isOpen={isDeletePopupOpen}
+                onClose={closeAllPopups}
+                onCardDelete={handleCardDelete}
+                card={selectedDeletionCard}
+              />
+              
+            </Main>
+            <Footer />  
+          </Route> 
+          <Route path='/'>
+          test
+          </Route>  
+        </Switch>
       </CurrentUserContext.Provider>
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
