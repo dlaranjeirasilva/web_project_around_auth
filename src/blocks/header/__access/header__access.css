@@ -1,0 +1,13 @@
+.header__access {
+    color: #ffffff;
+    padding-top: 5px;
+    height: 22px;
+    width: 103px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.header__access:hover {
+    opacity: 0.6;
+  }
