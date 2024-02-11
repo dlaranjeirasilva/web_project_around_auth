@@ -1,0 +1,10 @@
+.modal__popup-tool-tip {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background-color: white;
+  height: 330px;
+  width: 430px;
+  border-radius: 10px;
+}

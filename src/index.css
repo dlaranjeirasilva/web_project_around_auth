@@ -2,9 +2,20 @@
 
 @import url("./blocks/root/root.css");
 
+@import url("./blocks/auth-section/auth-section.css");
+@import url("./blocks/auth-section/__container/auth-section__container.css");
+@import url("./blocks/auth-section/__form/auth-section__form.css");
+@import url("./blocks/auth-section/__title/auth-section__title.css");
+@import url("./blocks/auth-section/__input/auth-section__input.css");
+@import url("./blocks/auth-section/__button/auth-section__button.css");
+@import url("./blocks/auth-section/__link/auth-section__link.css");
+
 @import url("./blocks/header/header.css");
 @import url("./blocks/header/__logo/header__logo.css");
-@import url("./blocks/header/__access/header__access.css");
+
+@import url("./blocks/header-auth/header-auth.css");
+@import url("./blocks/header-auth/__access/header-auth__access.css");
+@import url("./blocks/header-auth/__action/header-auth__action.css");
 
 @import url("./blocks/main/main.css");
 
@@ -39,6 +50,9 @@
 @import url("./blocks/modal/_opened/modal_opened.css");
 @import url("./blocks/modal/__button/modal__button.css");
 @import url("./blocks/modal/__container/modal__container.css");
+@import url("./blocks/modal/__popup-tool-tip/modal__popup-tool-tip.css");
+@import url("./blocks/modal/__popup-message/modal__popup-message.css");
+@import url("./blocks/modal/__popup-icon/modal__popup-icon.css");
 
 @import url("./blocks/modal/__popup-container/modal__popup-container.css");
 @import url("./blocks/modal/__popup-image/modal__popup-image.css");

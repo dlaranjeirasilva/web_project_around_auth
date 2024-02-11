@@ -1,0 +1,16 @@
+.auth-section__link {
+  margin-top: 7px;
+  height: 17px;
+  width: 358px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.auth-section__link:hover {
+  opacity: 0.6;
+}
