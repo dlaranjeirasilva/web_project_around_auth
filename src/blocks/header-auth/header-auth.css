@@ -1,0 +1,9 @@
+.header-auth {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 5px;
+  justify-content: right;
+  font-family: 'Inter', sans-serif;
+  height: 22px;
+}
