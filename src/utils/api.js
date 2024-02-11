@@ -21,9 +21,25 @@ class Api {
     })
   }
 
-  getUserInfo() {
-    // const spinnerElement = document.querySelector('.spinner');
-    // renderLoading(true, spinnerElement)
+  waitForSpinnerElement() {
+    return new Promise((resolve) => {
+      const checkSpinner = () => {
+        const spinnerElement = document.querySelector('.spinner');
+        if(spinnerElement) {
+          resolve(spinnerElement);
+        } else {
+          setTimeout(checkSpinner, 100);
+        }
+      };
+      checkSpinner();
+    })
+  }
+
+  async getUserInfo() {
+    let spinnerElement = await this.waitForSpinnerElement().catch(() => null);
+    if(spinnerElement) {
+      renderLoading(true, spinnerElement)
+    }
     return fetch(`${this._baseUrl}/users/me`, {
       headers: {
         authorization: this._token
@@ -33,15 +49,21 @@ class Api {
       if (res.ok) {
         return res.json();
       }
-      // renderLoading(false, spinnerElement)
+      if(spinnerElement) {
+        renderLoading(false, spinnerElement)
+      }
       return Promise.reject(`Error: ${res.status}`);
     })
     .catch((err) => {
       console.error(`Error: ${err}`)
-      // renderLoading(false, spinnerElement)
+      if(spinnerElement) {
+        renderLoading(false, spinnerElement)
+      }
     })
     .finally(() => {
-      // renderLoading(false, spinnerElement)
+      if(spinnerElement) {
+        renderLoading(false, spinnerElement)
+      }
     });
   }
 
