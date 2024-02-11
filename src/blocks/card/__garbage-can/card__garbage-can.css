@@ -1,0 +1,11 @@
+.card__garbage-can {
+  position: absolute;
+  margin-top: 18px;
+  margin-left: calc(282px - (15px + 20px));
+  visibility: visible;
+}
+
+.card__garbage-can:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}

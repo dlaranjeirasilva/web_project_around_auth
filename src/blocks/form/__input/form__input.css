@@ -1,0 +1,26 @@
+.form__input {
+  height: 30px;
+  width: 358px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  padding: 0;
+  line-height: 2;
+}
+
+.form__input:first-of-type {
+  padding-top: 16px;
+}
+
+.form__input:invalid {
+  border-bottom: 1px solid red;
+}
+
+@media screen and (max-width: 768px) {
+  .form__input {
+    max-width: 238px;
+  }
+}

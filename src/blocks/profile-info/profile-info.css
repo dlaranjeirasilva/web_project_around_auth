@@ -1,0 +1,38 @@
+.profile-info {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 165px;
+  display: inline-grid;
+  grid-template-columns: 373px 42px;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: baseline;
+  column-gap: 18px;
+  row-gap: 16px;
+  height: 77px;
+  width: 415px;
+}
+
+@media screen and (max-width: 885px) {
+  .profile-info {
+    grid-template-columns: 320px;
+    padding: 15px 0 0;
+    margin-bottom: 50px;
+    column-gap: 0;
+    max-width: 353px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile-info {
+    margin-bottom: 0;
+    grid-template-columns: 242px;
+    column-gap: 0;
+    row-gap: 0;
+    height: initial;
+    width: initial;
+    padding: 0;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 36px;
+  }
+}

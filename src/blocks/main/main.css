@@ -1,0 +1,19 @@
+.main {
+  margin: 0 auto;
+  width: 880px;
+}
+
+@media screen and (max-width: 885px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 581px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    max-width: 282px;
+  }
+}

@@ -1,0 +1,10 @@
+.header-auth__access {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.header-auth__access:hover {
+    opacity: 0.6;
+}

@@ -1,0 +1,14 @@
+.header-auth__action {
+  color: #A9A9A9;
+  background-color: #000000;
+  border: none;
+  cursor: pointer;
+  margin-left: 56px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.header-auth__action:hover {
+  opacity: 0.6;
+}

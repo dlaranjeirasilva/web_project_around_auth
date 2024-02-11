@@ -1,0 +1,30 @@
+.profile-info__about-me {
+  color: #ffffff;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  font-size: 18px;
+  font-weight: 400;
+  padding-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 885px) {
+  .profile-info__about-me {
+    width: initial;
+    font-size: 18px;
+    padding: 0;
+    max-width: 373px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile-info__about-me {
+    width: initial;
+    grid-column-end: 4;
+    padding-top: 10px;
+    text-align: center;
+  }
+}
